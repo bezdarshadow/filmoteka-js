@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filmoteka</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+      integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+
+        <!-- logo -->
+        
+        <div class="header-logo>">
+          <a href="./index.html" class="link header-logo__link">
+          <span class="header-logo__icon"
+            ><svg width="16" height="16">
+              <use href=".\images\sprite.svg#icon-film"></use></svg></span
+          >Filmoteka
+          </a>
+        </div>
+
+ <!-- Search-container -->
+
+        <div class="search-container">
+      <form class="search-form" id="search-form">
+        <input type="text" name="searchQuery" autocomplete="off" placeholder="Поиск фильмов..." />
+        <button type="submit">
+         <span class="search__icon"
+            ><svg width="16" height="16">
+              <use href=".\images\sprite.svg#icon-search-2"></use></svg></span
+        </button>
+      </form>
+      </div>
+
+       <!-- Menu-container -->
+
+<div class="menu-nav">
+              <ul class="list nav__list">
+                <li class="item nav__item">
+                  <a href="./index.html" class="link nav__link nav__link--current"
+                    >HOME</a
+                  >
+                </li>
+                
+                <li class="item nav__item">
+                  <a href="./my-library.html" class="link nav__link">MY LIBRARY</a>
+                </li>
+              </ul>
+            </div>
+        
+
+          
+    <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
+    <!-- <script src="./index.js"></script> -->
+  </body>
+</html>
