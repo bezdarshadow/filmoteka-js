@@ -1,0 +1,79 @@
+.gallery{
+    @include mq(mobile){
+        padding-top: 20px;
+    }
+    @include mq(tablet){
+        padding-top: 60px;
+    }
+}
+
+
+.gallery__list{
+    @include mq(tablet){
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -30px;
+        margin-top: -30px; 
+    }
+}
+
+
+.gallery__item {
+    max-width: 280px;
+    min-height: 440px;
+
+    @include mq(tablet){
+    max-width: 300px;
+    flex-basis: calc((100% - 60px) / 2);
+    margin-left: 30px;
+    margin-top: 30px;
+    }
+
+    @include mq(desktop){
+    max-width: 280px;
+    flex-basis: calc((100% - 90px) / 3);
+    }
+
+
+}
+
+.film-card__bottom{
+    display: flex;
+    margin-top: 10px;
+    align-items: end;
+}
+
+.film-card__image{
+    border-radius: 5px;
+}
+
+.film-card__title{
+    font-family: var(--main-text-font);
+    font-weight: 500;
+    color: var(--main-text-color);
+    font-size: 12px;
+    line-height: 1.16;
+    text-transform: uppercase;
+}
+
+.film-card__genres{
+    font-family: var(--main-text-font);
+    font-weight: 500;
+    color: var(--accent-text-color);
+    font-size: 12px;
+    line-height: 1.16;
+}
+
+.film-card__rating{
+    font-family: var(--main-text-font);
+    font-weight: 500;
+    color: var(--btn-text-color);
+    background-color: var(--accent-text-color);
+    padding: 1px 6px 0px 6px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-left: 10px;
+    line-height: 1.16;
+    text-transform: uppercase;
+
+}
