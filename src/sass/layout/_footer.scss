@@ -17,6 +17,12 @@
     border:solid 0px;
     text-decoration: underline;
     padding: 0;
+    cursor: pointer;
+}
+.footer__btn:focus,
+.footer__btn:hover
+{
+    color: var(--accent-color);
 }
 .footer__svg
 {

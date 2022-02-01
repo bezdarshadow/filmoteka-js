@@ -98,12 +98,14 @@ select {
 @media (min-width: 320px) {
   .gallery {
     padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
 @media (min-width: 768px) {
   .gallery {
     padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
 
@@ -226,6 +228,12 @@ select {
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  font-family: var(--main-text-font);
+  font-weight: 500;
+  color: var(--main-text-color);
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
 }
 
 .modal-ourteam__heading {
@@ -243,10 +251,34 @@ select {
   width: 200px;
 }
 
+.modal-ourteam__item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal-ourteam__item a:hover,
+.modal-ourteam__item a:focus {
+  color: var(--accent-color);
+}
+
 .modal-ourteam__closeBtn {
   position: absolute;
   top: 2px;
   right: 2px;
+  background-color: inherit;
+  border: solid 0;
+  cursor: pointer;
+}
+
+.moda-ourteam__svg {
+  margin-right: 3px;
 }
 
 .is-hidden {
@@ -257,7 +289,7 @@ select {
   transition: opacity var(--animation), visibility var(--animation);
 }
 
-.backdrop {
+.backdrop-ourteam {
   position: fixed;
   top: 0;
   left: 0;
@@ -288,6 +320,12 @@ select {
   border: solid 0px;
   text-decoration: underline;
   padding: 0;
+  cursor: pointer;
+}
+
+.footer__btn:focus,
+.footer__btn:hover {
+  color: var(--accent-color);
 }
 
 .footer__svg {
