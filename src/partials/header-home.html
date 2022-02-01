@@ -1,48 +1,41 @@
+< class="header">
+<header class="container header__container">
+  <!-- logo -->
 
- 
-    <header class="header">
-      <header class="container header__container">
+  <div class="header-logo>">
+    <a href="./index.html" class="link header-logo__link">
+      <span class="header-logo__icon"
+        ><svg width="16" height="16">
+          <use href=".\images\sprite.svg#icon-film"></use></svg></span
+      >Filmoteka
+    </a>
+  </div>
 
-        <!-- logo -->
-        
-        <div class="header-logo>">
-          <a href="./index.html" class="link header-logo__link">
-          <span class="header-logo__icon"
-            ><svg width="16" height="16">
-              <use href=".\images\sprite.svg#icon-film"></use></svg></span
-          >Filmoteka
-          </a>
-        </div>
+  <!-- Search-container -->
 
- <!-- Search-container -->
+  <div class="search-container">
+    <form class="search-form" id="search-form">
+      <input type="text" name="searchQuery" autocomplete="off" placeholder="Поиск фильмов..." />
+      <button type="submit">
+        <span class="search__icon"
+          ><svg width="16" height="16">
+            <use href=".\images\sprite.svg#icon-search-2"></use></svg
+        ></span>
+      </button>
+    </form>
+  </div>
 
-        <div class="search-container">
-      <form class="search-form" id="search-form">
-        <input type="text" name="searchQuery" autocomplete="off" placeholder="Поиск фильмов..." />
-        <button type="submit">
-         <span class="search__icon"
-            ><svg width="16" height="16">
-              <use href=".\images\sprite.svg#icon-search-2"></use></svg></span
-        </button>
-      </form>
-      </div>
+  <!-- Menu-container -->
 
-       <!-- Menu-container -->
+  <div class="menu-nav">
+    <ul class="list nav__list">
+      <li class="item nav__item">
+        <a href="./index.html" class="link nav__link nav__link--current">HOME</a>
+      </li>
 
-<div class="menu-nav">
-              <ul class="list nav__list">
-                <li class="item nav__item">
-                  <a href="./index.html" class="link nav__link nav__link--current"
-                    >HOME</a
-                  >
-                </li>
-                
-                <li class="item nav__item">
-                  <a href="./my-library.html" class="link nav__link">MY LIBRARY</a>
-                </li>
-              </ul>
-            </div>
-        
-          </header>
-          
-    
+      <li class="item nav__item">
+        <a href="./my-library.html" class="link nav__link">MY LIBRARY</a>
+      </li>
+    </ul>
+  </div>
+</header>
