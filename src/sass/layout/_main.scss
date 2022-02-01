@@ -1,10 +1,13 @@
 .gallery{
     @include mq(mobile){
         padding-top: 20px;
+        padding-bottom: 20px;
     }
     @include mq(tablet){
         padding-top: 60px;
+        padding-bottom: 60px;
     }
+    
 }
 
 
