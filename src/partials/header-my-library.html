@@ -1,35 +1,41 @@
 <header class="header">
   <div class="container header__container">
-    <!-- logo -->
+    <!-- Common logo-nav container-->
 
-    <div class="header-logo>">
-      <a href="./index.html" class="link header-logo__link">
-        <span class="header-logo__icon"
-          ><svg width="16" height="16">
-            <use href=".\images\sprite.svg#icon-film"></use></svg></span
-        >Filmoteka
-      </a>
+    <div class="header-logo-nav">
+      <!-- logo -->
+
+      <div class="header-logo>">
+        <a href="./index.html" class="link header-logo__link">
+          <span class="header-logo__icon"
+            ><svg width="22" height="22">
+              <use href=".\images\sprite.svg#icon-film"></use></svg></span
+          >Filmoteka
+        </a>
+      </div>
+
+      <!-- Menu-container -->
+
+      <div class="header-nav">
+        <ul class="list header-nav__list">
+          <li class="item header-nav__item">
+            <a href="./index.html" class="link header-nav__link nav__link--current">HOME</a>
+          </li>
+
+          <li class="item header-nav__item">
+            <a href="./my-library.html" class="link header-nav__link">MY LIBRARY</a>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Buttons container -->
+    <!-- Search or buttons container -->
 
-    <div class="buttons-container">
+    <div class="search-buttons-container">
       <button type="button" class="btn-watched">WATCHED</button>
       <button type="button" class="btn-queue">QUEUE</button>
     </div>
 
     <!-- Menu-container -->
-
-    <div class="menu-nav">
-      <ul class="list nav__list">
-        <li class="item nav__item">
-          <a href="./index.html" class="link nav__link">HOME</a>
-        </li>
-
-        <li class="item nav__item">
-          <a href="./my-library.html" class="link nav__link nav__link--current">MY LIBRARY</a>
-        </li>
-      </ul>
-    </div>
   </div>
 </header>
