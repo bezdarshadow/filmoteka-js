@@ -39,14 +39,16 @@
 }
 
 .film-card{
+
     &__bottom{
         display: flex;
         margin-top: 10px;
-        align-items: end;
+        align-items: center;
     }
 
     &__image{
         border-radius: 5px;
+    
     }
 
     &__title{
@@ -58,13 +60,15 @@
         text-transform: uppercase;
     }
 
-    &__genres{
+    &__genres,
+    &__release_date{
         font-family: var(--main-text-font);
         font-weight: 500;
         color: var(--accent-text-color);
         font-size: 12px;
         line-height: 1.16;
     }
+
 
     &__rating{
         font-family: var(--main-text-font);
