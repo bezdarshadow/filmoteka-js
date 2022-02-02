@@ -12,7 +12,7 @@ export class TheMoviedbAPI {
     }
 
     async fetchTrendMovies(){
-        const trendMovies = await axios.get(`${this.#BASE_URL}trending/movie/week`, {
+        const trendMovies = await axios.get(`${this.#BASE_URL}trending/movie/week?page=${this.page}`, {
             params: {
                 api_key: this.#API_KEY,   
             }
@@ -25,7 +25,8 @@ export class TheMoviedbAPI {
 
 
     async fetchSearchMovies(){
-        const searchMovies = await axios.get(`${this.#BASE_URL}search/movie`, {
+        console.log(this.page);
+        const searchMovies = await axios.get(`${this.#BASE_URL}search/movie?page=${this.page}`, {
             params: {
                 api_key: this.#API_KEY,
                 query: this.searchQuery,
