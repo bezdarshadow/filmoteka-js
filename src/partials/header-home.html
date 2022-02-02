@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header-home">
   <div class="container header__container">
     <!-- Common logo-nav container-->
 
@@ -9,8 +9,9 @@
         <a href="./index.html" class="link header-logo__link">
           <span class="header-logo__icon"
             ><svg width="22" height="22">
-              <use href=".\images\sprite.svg#icon-film"></use></svg></span
-          >Filmoteka
+              <use href=".\images\sprite.svg#icon-film"></use></svg
+          ></span>
+          <span class="header-logo__text">Filmoteka</span>
         </a>
       </div>
 
@@ -31,9 +32,15 @@
 
     <!-- Search or buttons container -->
 
-    <div class="search-buttons-container">
+    <div class="search-container">
       <form class="search-form" id="search-form">
-        <input type="text" name="searchQuery" autocomplete="off" placeholder="Поиск фильмов..." />
+        <input
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Поиск фильмов..."
+          autofocus
+        />
         <button type="submit">
           <span class="search__icon">
             <svg width="16" height="16">

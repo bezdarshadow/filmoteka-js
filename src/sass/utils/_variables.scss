@@ -1,19 +1,19 @@
 :root {
+  // Цвета
+  --main-text-color: #000000;
+  --accent-text-color: #ff6b08;
+  --second-text-color: #8c8c8c;
+  --btn-text-color: #ffffff;
+  --accent-color: #ff6b01;
+  --bckgrmodal: rgba(0, 0, 0, 0.25);
+  --bckfooter: rgba(247, 247, 247, 1);
+  --bckgrheader: rgba(0, 0, 0, 0.56);
+  --btn-shadow-color: rgba(255, 107, 1, 0.6);
+  // Анимация
 
-    // Цвета
-    --main-text-color: #000000;
-    --accent-text-color: #FF6B08;
-    --second-text-color: #8C8C8C;
-    --btn-text-color: #FFFFFF;
-    --accent-color: #FF6B01;
-    --bckgrmodal:rgba(0, 0, 0, 0.25);
-    --bckfooter: rgba(247, 247, 247, 1);
+  --animation: cubic-bezier(0.4, 0, 0.2, 1);
 
-    // Анимация 
+  // Шрифты
 
-    --animation: cubic-bezier(0.4, 0, 0.2, 1);
-
-    // Шрифты 
-
-    --main-text-font: 'Roboto', sans-serif;
+  --main-text-font: 'Roboto', sans-serif;
 }

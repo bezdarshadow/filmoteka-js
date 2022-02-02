@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header-my-library">
   <div class="container header__container">
     <!-- Common logo-nav container-->
 
@@ -9,8 +9,9 @@
         <a href="./index.html" class="link header-logo__link">
           <span class="header-logo__icon"
             ><svg width="22" height="22">
-              <use href=".\images\sprite.svg#icon-film"></use></svg></span
-          >Filmoteka
+              <use href=".\images\sprite.svg#icon-film"></use></svg
+          ></span>
+          <span class="header-logo__text">Filmoteka</span>
         </a>
       </div>
 
@@ -19,11 +20,13 @@
       <div class="header-nav">
         <ul class="list header-nav__list">
           <li class="item header-nav__item">
-            <a href="./index.html" class="link header-nav__link nav__link--current">HOME</a>
+            <a href="./index.html" class="link header-nav__link">HOME</a>
           </li>
 
           <li class="item header-nav__item">
-            <a href="./my-library.html" class="link header-nav__link">MY LIBRARY</a>
+            <a href="./my-library.html" class="link header-nav__link nav__link--current"
+              >MY LIBRARY</a
+            >
           </li>
         </ul>
       </div>
@@ -31,7 +34,7 @@
 
     <!-- Search or buttons container -->
 
-    <div class="search-buttons-container">
+    <div class="buttons-container">
       <button type="button" class="btn-watched">WATCHED</button>
       <button type="button" class="btn-queue">QUEUE</button>
     </div>
