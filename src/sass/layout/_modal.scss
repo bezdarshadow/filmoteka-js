@@ -1,0 +1,250 @@
+.backdropp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bckgrmodal);
+  z-index: 55;
+  transition: opacity var(--animation), visibility var(--animation);
+}
+.is-hiden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity var(--animation), visibility var(--animation);
+}
+.moco {
+  min-width: 285px;
+  min-height: 967px;
+  // position: relative;
+  @include mq(tablet) {
+    max-width: 620px;
+    min-height: 570px;
+  }
+  @include mq(desktop) {
+    max-width: 890px;
+    min-height: 580px;
+  }
+}
+
+.modal__button_close {
+  position: absolute;
+  left: 69%;
+  top: 18%;
+  background-color: var(--btn-text-color);
+  border: 0px;
+  z-index: 5000;
+  cursor: pointer;
+  @include mq(tablet) {
+    left: 73%;
+    top: 32%;
+  }
+  @include mq(desktop) {
+    left: 71%;
+    top: 31%;
+  }
+}
+.modal {
+  //   position: relative;
+  min-width: 280px;
+  //   min-height: 100%;
+  //   height: 95vh;
+  //   width: 100%;
+  min-height: 958px;
+  //   min-width: 280px;
+  //   min-height: 100vw;
+  background: var(--btn-text-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  //   padding: 48px, 20px, 41px, 20px;
+  padding-top: 48px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 41px;
+  overflow: auto;
+  @include mq(tablet) {
+    display: flex;
+
+    max-width: 618px;
+    min-height: 562px;
+    overflow: hidden;
+  }
+  @include mq(desktop) {
+    max-width: 882px;
+    min-height: 568px;
+  }
+
+  &__container_right {
+    max-width: 240px;
+    max-height: 357px;
+    @include mq(tablet) {
+      width: 264px;
+      height: 374px;
+      padding-right: 32px;
+    }
+    @include mq(desktop) {
+      min-width: 326px;
+      min-height: 420px;
+    }
+  }
+
+  &__container_left {
+    max-width: 240px;
+    max-height: 357px;
+    @include mq(tablet) {
+      max-width: 264px;
+      max-height: 374px;
+    }
+    @include mq(desktop) {
+      max-width: 396px;
+      min-height: px;
+    }
+  }
+
+  &__title {
+    font-style: normal;
+    font-size: 20px;
+    margin-top: 30px;
+    @include mq(tablet) {
+      margin-top: 0px;
+    }
+    @include mq(desktop) {
+    }
+  }
+
+  &__about {
+    margin-top: 10px;
+    font-family: var(--main-text-font);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  &__about_text {
+    margin-top: 10px;
+    font-family: var(--main-text-font);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  &__container_btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 21px;
+    margin-bottom: 41px;
+  }
+  &__button_watch {
+    height: 44px;
+    width: 113px;
+    border-radius: 5px;
+    margin-right: 15px;
+    font-family: var(--main-text-font);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: var(--btn-text-color);
+    background-color: var(--accent-color);
+    border: var(--accent-color);
+    cursor: pointer;
+    &:hover {
+      opacity: 70%;
+    }
+
+    @include mq(tablet) {
+      height: 44px;
+      width: 126px;
+    }
+    @include mq(desktop) {
+      height: 44px;
+      width: 136px;
+    }
+  }
+  &__button_queue {
+    height: 44px;
+    width: 113px;
+    border-radius: 5px;
+    margin-right: 15px;
+    font-family: var(--main-text-font);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: var(--main-text-color);
+    background-color: var(--btn-text-color);
+    border-color: var(--main-text-color);
+    cursor: pointer;
+    &:hover {
+      //   opacity: 70%;
+      background-color: rgba(0, 0, 0, 0.15);
+    }
+
+    @include mq(tablet) {
+      height: 44px;
+      width: 126px;
+    }
+    @include mq(desktop) {
+      height: 44px;
+      width: 136px;
+    }
+  }
+}
+
+.modal-list {
+  padding-top: 20px;
+  //   padding-right: 25px;
+  &__item {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    width: 70px;
+    margin-right: 38px;
+    font-family: var(--main-text-font);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--second-text-color);
+    @include mq(desktop) {
+      margin-right: 83px;
+    }
+  }
+  &__text_second {
+    width: 107px;
+    font-family: var(--main-text-font);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--main-text-color);
+  }
+  &__text_span {
+    color: var(--second-text-color);
+  }
+  &__akcent {
+    color: var(--btn-text-color);
+    background-color: var(--accent-color);
+    border-radius: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
