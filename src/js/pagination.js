@@ -31,6 +31,7 @@ async function renderTrendMovies2(){
         galleryEl.innerHTML=galleryCardTemplate(trendMovies.data);
 
     }catch(err){
+        spinner.disable();
 
     }
     
