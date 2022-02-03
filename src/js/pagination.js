@@ -29,6 +29,10 @@ export class PaginationHelper {
         spinner.disable();
         
         this.markup.innerHTML = galleryCardTemplate(trendMovies.data);
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
         } catch(err){
             console.log(err);
             spinner.enable();
@@ -50,6 +54,10 @@ export class PaginationHelper {
         const searchMovie = await this.fetch.fetchSearchMovies();
         spinner.disable();
         this.markup.innerHTML = galleryCardTemplate(searchMovie.data);
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
         }catch(err){
             console.log(err);
