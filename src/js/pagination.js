@@ -1,45 +1,62 @@
-// const Pagination = require('tui-pagination');
-import {defaultSearchForForm,renderTrendMovies,paginationpoisk} from "./renderMovies"
-import { TheMoviedbAPI } from './themoviedb-api';
-import galleryCardTemplate from '../templates/galleryCard.hbs';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.min.css';
-
 import { LoadSpinner } from './loading-spinner';
-
+import galleryCardTemplate from '../templates/galleryCard.hbs';
 const spinner = new LoadSpinner({
     selector: '.backdrop-spinner',
     hidden: true
 });
 
-const paginationEl=document.querySelector(".tui-pagination")
-const galleryEl = document.querySelector('.gallery__list');
-const themoviedbApi2 = new TheMoviedbAPI;
-const paginationTrend = new Pagination(paginationEl,{
-        totalItems: 1000,
-        itemsPerPage: 40,
-        visiblePages: 5
-    })
-    
 
-async function renderTrendMovies2(){
-    spinner.enable();
-
-    try{
-        const trendMovies = await themoviedbApi2.fetchTrendMovies();
-        spinner.disable();
-        galleryEl.innerHTML=galleryCardTemplate(trendMovies.data);
-
-    }catch(err){
-        spinner.disable();
-
+export class PaginationHelper {
+    constructor(paginationWrapper, markup, fetch){
+        this.paginationWrapper = paginationWrapper,
+        this.markup = markup,
+        this.fetch = fetch
     }
-    
-}
 
-paginationTrend.on('beforeMove', (event) => {
-    themoviedbApi2.page=event.page
-    renderTrendMovies2()
-    console.log(renderTrendMovies);
-});
+
+    paginationTrend(total_results){
+        new Pagination(this.paginationWrapper,{
+        totalItems: total_results,
+        itemsPerPage: 20,
+        visiblePages: 5
+    }).on('beforeMove', async (event) => {
+        spinner.enable();
+        try{
+        this.fetch.page = event.page;
+        const trendMovies = await this.fetch.fetchTrendMovies();
+        spinner.disable();
+        
+        this.markup.innerHTML = galleryCardTemplate(trendMovies.data);
+        } catch(err){
+            console.log(err);
+            spinner.enable();
+        }
+    
+    });
+
+    };
+
+    paginationSearch(total_results){
+        new Pagination(this.paginationWrapper,{
+            totalItems: total_results,
+            itemsPerPage: 20,
+            visiblePages: 5
+    }).on('beforeMove', async (event) => {
+        spinner.enable();
+        try{
+        this.fetch.page = event.page;
+        const searchMovie = await this.fetch.fetchSearchMovies();
+        spinner.disable();
+        this.markup.innerHTML = galleryCardTemplate(searchMovie.data);
+
+        }catch(err){
+            console.log(err);
+            spinner.disable();
+        }
+    });
+    };
+
+}
 
