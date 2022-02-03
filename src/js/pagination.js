@@ -5,6 +5,13 @@ import galleryCardTemplate from '../templates/galleryCard.hbs';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.min.css';
 
+import { LoadSpinner } from './loading-spinner';
+
+const spinner = new LoadSpinner({
+    selector: '.backdrop-spinner',
+    hidden: true
+});
+
 const paginationEl=document.querySelector(".tui-pagination")
 const galleryEl = document.querySelector('.gallery__list');
 const themoviedbApi2 = new TheMoviedbAPI;
@@ -16,9 +23,17 @@ const paginationTrend = new Pagination(paginationEl,{
     
 
 async function renderTrendMovies2(){
-    const trendMovies = await themoviedbApi2.fetchTrendMovies();
+    spinner.enable();
+
+    try{
+        const trendMovies = await themoviedbApi2.fetchTrendMovies();
+        spinner.disable();
+        galleryEl.innerHTML=galleryCardTemplate(trendMovies.data);
+
+    }catch(err){
+
+    }
     
-    galleryEl.innerHTML=galleryCardTemplate(trendMovies.data);
 }
 
 paginationTrend.on('beforeMove', (event) => {

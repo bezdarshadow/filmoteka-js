@@ -1,6 +1,7 @@
 'use strict';
 import Notiflix from 'notiflix';
 import { TheMoviedbAPI } from './themoviedb-api';
+import { LoadSpinner } from './loading-spinner';
 import galleryCardTemplate from '../templates/galleryCard.hbs';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.min.css';
@@ -13,6 +14,11 @@ const paginationEl=document.querySelector(".tui-pagination")
 
 const themoviedbApi = new TheMoviedbAPI;
 
+const spinner = new LoadSpinner({
+    selector: '.backdrop-spinner',
+    hidden: true
+});
+
 
 searchFormEl.addEventListener('submit', onSearchFormSubmit)
 
@@ -20,9 +26,17 @@ searchFormEl.addEventListener('submit', onSearchFormSubmit)
 renderTrendMovies();
 
 export async function renderTrendMovies(){
-    const trendMovies = await themoviedbApi.fetchTrendMovies();
+    spinner.enable();
 
-    galleryEl.innerHTML = galleryCardTemplate(trendMovies.data);
+    try{
+        const trendMovies = await themoviedbApi.fetchTrendMovies();
+        spinner.disable();
+        
+        galleryEl.innerHTML = galleryCardTemplate(trendMovies.data);
+    } catch(err){
+        console.log(err);
+    }
+
 }
 
 export async function onSearchFormSubmit(event){
@@ -31,6 +45,7 @@ export async function onSearchFormSubmit(event){
     if (keyword.trim() === '') {
         return;
     }
+    spinner.enable();
     try{
         defaultSearchForForm(keyword);
         const searchMovie = await themoviedbApi.fetchSearchMovies();
@@ -39,6 +54,7 @@ export async function onSearchFormSubmit(event){
             throw new Error(err);
         }
         galleryCleaning();
+        spinner.disable();
         galleryEl.innerHTML = galleryCardTemplate(searchMovie.data);
         const paginationpoisk= new Pagination(paginationEl,{
             totalItems: 1000,
@@ -49,11 +65,6 @@ export async function onSearchFormSubmit(event){
             themoviedbApi.page=event.page
             const searchMovie = await themoviedbApi.fetchSearchMovies()
             galleryEl.innerHTML=galleryCardTemplate(searchMovie.data);
-            //  galleryEl.innerHTML = " ";
-            // console.log(themoviedbApi.page);
-            // console.log(galleryEl);
-            // console.log(galleryCardTemplate);
-            // galleryEl.innerHTML=galleryCardTemplate(searchMovie.data);
         });
 
     } catch(err){
