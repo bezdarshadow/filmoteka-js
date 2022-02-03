@@ -44,7 +44,6 @@
   border-radius: 5px;
   background-color: transparent;
 
-  //   font: inherit;
   color: var(--btn-text-color);
   cursor: pointer;
 
@@ -57,9 +56,7 @@
   transition: box-shadow 250ms var(--animation), background-color 250ms var(--animation);
 }
 
-.buttons-container button:hover
-// .buttons-container button:focus
-{
+.buttons-container button:hover {
   color: var(--btn-text-color);
   background-color: var(--accent-color);
   border: none;
