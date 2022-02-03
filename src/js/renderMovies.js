@@ -35,6 +35,7 @@ export async function renderTrendMovies(){
         galleryEl.innerHTML = galleryCardTemplate(trendMovies.data);
     } catch(err){
         console.log(err);
+        spinner.disable();
     }
 
 }
@@ -69,6 +70,7 @@ export async function onSearchFormSubmit(event){
 
     } catch(err){
         searchError();
+        spinner.disable();
     }
     
 }
