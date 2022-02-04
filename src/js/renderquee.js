@@ -1,4 +1,4 @@
-const libary = document.querySelector('.libaryDiv');
+const libary = document.querySelector('.gallery__list');
 import libRend from '../handlebars/gallery.hbs';
 import axios from 'axios';
 const API_KEY = '0d162b8d206fdcffbed55fe71207ad50';
@@ -11,14 +11,14 @@ import { LoadSpinner } from './loading-spinner';
 
 const spinner = new LoadSpinner({
   selector: '.backdrop-spinner',
-  hidden: true
+  hidden: true,
 });
 //
 //
 // DLYA MODALKI
 
 import ListItems from '../handlebars/modal.hbs';
-const open = document.querySelector('.libaryDiv');
+const open = document.querySelector('.gallery');
 const modal = document.querySelector('.backdropp');
 const closeBt = document.querySelector('.modal__button_close');
 const backdropp = document.querySelector('.backdropp');
@@ -56,13 +56,28 @@ function lososSec() {
 //
 
 let ara = [];
-
-let idid = localStorage.getItem('id');
-ara = idid.split(',');
+forel();
+function forel() {
+  //   let idid = localStorage.getItem('id');
+  //   ara = idid.split(',');
+  let idid = localStorage.getItem('id');
+  if (idid == null) {
+    return;
+  } else {
+    ara = idid.split(',');
+  }
+}
 
 let araSec = [];
-let ididid = localStorage.getItem('id2');
-araSec = ididid.split(',');
+forel2();
+function forel2() {
+  let ididid = localStorage.getItem('id2');
+  if (ididid == null) {
+    return;
+  } else {
+    araSec = ididid.split(',');
+  }
+}
 
 function getMovieById(id) {
   const data = axios.get(`${ID_URL}${id}?api_key=${API_KEY}`);
@@ -158,10 +173,10 @@ QE.addEventListener('click', () => {
   }
 });
 
-reset.addEventListener('click', () => {
-  localStorage.clear();
-  location.reload();
-});
+// reset.addEventListener('click', () => {
+//   localStorage.clear();
+//   location.reload();
+// });
 //
 //
 //
@@ -265,6 +280,17 @@ function getMovieById(id) {
 
   return data;
 }
+
+//
+//
+// DELAYEM MAGIC
+document.addEventListener('DOMContentLoaded', function (e) {
+  // ждем окончание загрузки
+  setTimeout(function () {
+    const myElement = document.querySelector('.btn-watched'); // ищем нужный элемент
+    myElement.click(); // клик!
+  }, 0); // 5000 msec = 5 sec
+});
 
 //
 //

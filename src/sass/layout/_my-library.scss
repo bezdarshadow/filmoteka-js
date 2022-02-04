@@ -1,0 +1,123 @@
+// .gallery {
+//   @include mq(mobile) {
+//     padding-top: 20px;
+//     padding-bottom: 20px;
+//   }
+//   @include mq(tablet) {
+//     padding-top: 60px;
+//     padding-bottom: 60px;
+//   }
+
+//   &__list {
+//     @include mq(tablet) {
+//       display: flex;
+//       flex-wrap: wrap;
+//       margin-left: -30px;
+//       margin-top: -30px;
+//     }
+//   }
+
+//   &__item {
+//     max-width: 280px;
+//     min-height: 440px;
+
+//     @include mq(tablet) {
+//       max-width: 300px;
+//       flex-basis: calc((100% - 60px) / 2);
+//       margin-left: 30px;
+//       margin-top: 30px;
+//     }
+
+//     @include mq(desktop) {
+//       max-width: 280px;
+//       flex-basis: calc((100% - 90px) / 3);
+//     }
+//   }
+// }
+
+// .film-card {
+//   &__bottom {
+//     display: flex;
+//     margin-top: 10px;
+//     align-items: center;
+//   }
+
+//   &__image {
+//     border-radius: 5px;
+//   }
+
+//   &__title {
+//     font-family: var(--main-text-font);
+//     font-weight: 500;
+//     color: var(--main-text-color);
+//     font-size: 12px;
+//     line-height: 1.16;
+//     text-transform: uppercase;
+//   }
+
+//   &__genres,
+//   &__release_date {
+//     font-family: var(--main-text-font);
+//     font-weight: 500;
+//     color: var(--accent-text-color);
+//     font-size: 12px;
+//     line-height: 1.16;
+//   }
+
+//   &__rating {
+//     font-family: var(--main-text-font);
+//     font-weight: 500;
+//     color: var(--btn-text-color);
+//     background-color: var(--accent-text-color);
+//     padding: 1px 6px 0px 6px;
+//     border-radius: 5px;
+//     font-size: 12px;
+//     margin-left: 10px;
+//     line-height: 1.16;
+//     text-transform: uppercase;
+//   }
+// }
+
+// .backdrop-spinner {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: var(--bckgrmodal);
+//   z-index: 55000;
+// }
+
+// .lds-dual-ring {
+//   display: inline-block;
+//   width: 160px;
+//   height: 160px;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   z-index: 4;
+// }
+// .lds-dual-ring:after {
+//   content: ' ';
+//   display: block;
+//   width: 128px;
+//   height: 128px;
+//   margin: 16px;
+//   border-radius: 50%;
+//   border: 12px solid var(--accent-color);
+//   border-color: var(--accent-color) transparent var(--accent-color) transparent;
+//   animation: lds-dual-ring 1.2s linear infinite;
+// }
+// @keyframes lds-dual-ring {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
+
+// // .lds-dual-ring.is-hidden {
+// //   display: none;
+// // }
