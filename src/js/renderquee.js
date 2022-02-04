@@ -287,10 +287,28 @@ function getMovieById(id) {
 document.addEventListener('DOMContentLoaded', function (e) {
   // ждем окончание загрузки
   setTimeout(function () {
-    const myElement = document.querySelector('.btn-watched'); // ищем нужный элемент
+    const myElement = document.querySelector('.btn-watched');
+    myElement.classList.add('is-active') // ищем нужный элемент
     myElement.click(); // клик!
   }, 0); // 5000 msec = 5 sec
 });
+
+ADD.addEventListener('click', tajikistan)
+QE.addEventListener('click', uzbekistan)
+
+function uzbekistan(){ 
+  ADD.classList.remove('is-active');
+  QE.classList.add('is-active');
+ 
+
+}
+
+function tajikistan() {
+  QE.classList.remove('is-active');
+  ADD.classList.add('is-active');
+}
+
+
 
 //
 //

@@ -63,3 +63,15 @@
 
   box-shadow: 0px 8px 43px var(--btn-shadow-color);
 }
+
+.btn-watched.is-active,
+.btn-queue.is-active{
+  color: var(--btn-text-color);
+  background-color: var(--accent-color);
+  border: none;
+
+  box-shadow: 0px 8px 43px var(--btn-shadow-color);
+}
+
+
+
