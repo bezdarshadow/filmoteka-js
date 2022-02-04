@@ -58,3 +58,24 @@ select {
     border: 0;
     clip: rect(0 0 0 0);
   }
+
+
+.tui-is-selected
+{
+    color: white !important;
+    background-color: var(--accent-color) !important;
+    border-radius: 4px !important;
+}
+.tui-page-btn
+{
+    border: 0px solid !important;
+    // display: block !important;
+    text-align: center !important;
+}
+.tui-page-btn:hover,
+.tui-page-btn:focus
+{
+    background-color: var(--accent-color) !important;
+    border-radius: 4px !important;
+    color: white !important
+}

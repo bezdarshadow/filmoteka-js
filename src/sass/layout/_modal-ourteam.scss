@@ -8,13 +8,11 @@
     }
     @include mq(desktop) {
         overflow: hidden;
-        // width: 100%;
-        // max-width: 600px;
-        max-height: 600px;
-        height: 63vh;
-        width: 80vw;
+        max-height: 750px;
+        width: 700px;
     }
     background: var(--btn-text-color);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -42,9 +40,15 @@
       margin-bottom: 15px;
   }
 
+  .modal-ourteam__sociallinks{
+      margin-top: 10px;
+  }
+
 .modal-ourteam__picters
 {
     height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 .modal-ourteam__list_item
 {
@@ -79,7 +83,6 @@
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
-    transition: opacity var(--animation), visibility var(--animation);
   }
   .backdrop-ourteam{
     position: fixed;
@@ -89,6 +92,6 @@
     height: 100%;
     background-color: var(--bckgrmodal);
     z-index: 55000;
-    transition: opacity var(--animation), visibility var(--animation);
+    transition: opacity 250ms var(--animation), visibility 250ms var(--animation);
   }
   
