@@ -1,23 +1,35 @@
 'use strict';
 import axios from 'axios';
 import ListItems from '../handlebars/modal.hbs';
-import libRend from '../handlebars/gallery.hbs';
-
 const open = document.querySelector('.gallery__list');
 const modal = document.querySelector('.backdropp');
 const closeBt = document.querySelector('.modal__button_close');
 const backdropp = document.querySelector('.backdropp');
 const modalll = document.querySelector('.modal');
-const libary = document.querySelector('.libaryDiv');
-
 const API_KEY = '0d162b8d206fdcffbed55fe71207ad50';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
 let arr = [];
-
-function libaryRender() {
-  //   const knopka = document.querySelector('.modal__button_watch');
-  console.log('lox');
+losos();
+function losos() {
+  if (localStorage.getItem('id') == null) {
+    // console.log(1);
+    return;
+  } else {
+    let ididid = localStorage.getItem('id');
+    arr = ididid.split(',');
+  }
+}
+let arrSec = [];
+lososSec();
+function lososSec() {
+  if (localStorage.getItem('id2') == null) {
+    // console.log(1);
+    return;
+  } else {
+    let ididid = localStorage.getItem('id2');
+    arrSec = ididid.split(',');
+  }
 }
 
 const ID_URL = `${BASE_URL}/movie/`;
@@ -30,20 +42,12 @@ function openModall(e) {
     return;
   }
   modal.classList.remove('is-hiden');
-  //   console.dir(e);
-  //   const danylo = document.querySelector('.film-card__image');
 
   idx = e.target.dataset.action;
 
-  arr.splice(0, 0, idx);
-  console.log(arr);
-  localStorage.setItem('id', arr);
-  //   console.log(danylo.dataset.action);
-
   getMovieById(idx)
     .then(response => {
-      //   console.log(response.data.img);
-      console.log(response.data);
+      //   console.log(response.data);
       const title = response.data.title;
       const [genre] = response.data.genres;
       const genres = genre.name;
@@ -55,8 +59,10 @@ function openModall(e) {
       const img = response.data.poster_path;
       const [com] = response.data.production_companies;
       const comp = com.logo_path;
+      //   const id = response.data.id;
 
       modalll.innerHTML = ListItems({
+        // id,
         title,
         vote,
         img,
@@ -83,12 +89,32 @@ function openModall(e) {
 
   setTimeout(() => {
     const knopka = document.querySelector('.modal__button_watch');
-    // libaryRender();
     knopka.addEventListener('click', event => {
-      libaryRender();
+      for (let i = 0; i <= arr.length; i += 1) {
+        // console.log(arr);
+        if (idx !== arr[i]) {
+          arr.splice(0, 0, idx);
+          //   console.log(arr);
+          localStorage.setItem('id', arr);
+        }
+        return;
+      }
     });
-    console.log(knopka);
-  }, 1000);
+  }, 700);
+  setTimeout(() => {
+    const knopkaSecond = document.querySelector('.modal__button_queue');
+    knopkaSecond.addEventListener('click', event => {
+      for (let i = 0; i <= arrSec.length; i += 1) {
+        //   console.log(arr);
+        if (idx !== arrSec[i]) {
+          arrSec.splice(0, 0, idx);
+          // console.log(arr);
+          localStorage.setItem('id2', arrSec);
+        }
+        return;
+      }
+    });
+  }, 700);
 }
 
 function closeModall() {
