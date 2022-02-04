@@ -1,0 +1,46 @@
+
+
+    <!-- <svg class="modal__button_close" use=""></svg> -->
+    {{!-- <button class="modal__button_close" type="button">
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <path d="m8 8 14 14M8 22 22 8" stroke="#000" stroke-width="2" />
+    </svg>
+</button> --}}
+
+    <div class="modal__container_right">
+        <img class="modal__img" src="https://image.tmdb.org/t/p/w500{{img}}" alt="">
+    </div>
+    <div class="modal__container_left">
+        <h3 class="modal__title">{{title}}</h3>
+        <ul class="modal__list modal-list">
+            <li class="modal-list__item">
+                <p class="modal-list__text">
+                    Vote / Votes
+                </p>
+                <p class="modal-list__text_second "><span class="modal-list__akcent">{{vote}}</span><span class="modal-list__text_span">/</span><span
+                        class="modal-list__text_span_second"> {{votes}}</span></p>
+            </li>
+            <li class="modal-list__item">
+                <p class="modal-list__text">Popularity</p>
+                <p class="modal-list__text_second">{{popularity}}</p>
+            </li>
+            <li class="modal-list__item">
+                <p class="modal-list__text">Original Title</p>
+                <p class="modal-list__text_second">{{original}}</p>
+            </li>
+            <li class="modal-list__item">
+                <p class="modal-list__text">Genre</p>
+                <p class="modal-list__text_second">{{genres}}</p>
+            </li>
+        </ul>
+        <p class="modal__about">ABOUT</p>
+        <p class="modal__about_text">
+            {{about}}
+        </p>
+        <div class="modal__container_btn">
+            <button class="modal__button_watch" type="button">ADD TO WATCHED</button>
+            <button class="modal__button_queue" type="button">ADD TO QUEUE</button>
+        </div>
+    </div>
+   
+

@@ -1,0 +1,25 @@
+.footer{
+    background-color: var(--bckfooter);
+}
+.footer__container
+{
+ padding-top: 30px;   
+ padding-bottom: 30px;   
+}
+.footer__text
+{
+    font-size: 14px;
+    text-align: center;    
+}
+.footer__btn
+{
+    background-color: var(--bckfooter);
+    border:solid 0px;
+    text-decoration: underline;
+    padding: 0;
+}
+.footer__svg
+{
+    width: 14px;
+    height: 13px;
+}
