@@ -8,6 +8,9 @@
 }
 .footer__text
 {
+    @include mq(mobile-only){
+        width: 240px;
+        }
     font-size: 14px;
     text-align: center;    
 }

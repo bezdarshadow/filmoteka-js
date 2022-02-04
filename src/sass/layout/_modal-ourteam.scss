@@ -1,15 +1,14 @@
 .modal-ourteam {
     width: 100vw;
     height: 100vh;
-    @include mq(tablet) {
+    @include mq(tablet-only) {
         height: 85vh;
         width: 80vw;
         max-height:900px ;
     }
     @include mq(desktop) {
-        overflow: hidden;
-        max-height: 750px;
-        width: 700px;
+        max-height: 850px;
+        width: 800px;
     }
     background: var(--btn-text-color);
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -21,6 +20,10 @@
     position: relative; 
     padding: 20px;
     overflow-y: auto;
+    @include mq(desktop)
+    {
+        overflow-y: hidden;
+    }   
   }
   .modal-ourteam__list_of_employers
   {
@@ -46,15 +49,17 @@
 
 .modal-ourteam__picters
 {
-    height: 200px;
+    height: 180px;
+    width: 190px;
     border-radius: 50%;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 .modal-ourteam__list_item
 {
-    margin-bottom: 40px;
-    text-align: center;
     width: 200px;
+    margin-bottom: 20px;
+    text-align: center;
+   
 }
 .modal-ourteam__item a
 {
