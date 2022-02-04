@@ -7,6 +7,12 @@ const ID_URL = `${BASE_URL}/movie/`;
 const ADD = document.querySelector('.btn-watched');
 const QE = document.querySelector('.btn-queue');
 const reset = document.querySelector('.btn-reset');
+import { LoadSpinner } from './loading-spinner';
+
+const spinner = new LoadSpinner({
+  selector: '.backdrop-spinner',
+  hidden: true
+});
 //
 //
 // DLYA MODALKI
