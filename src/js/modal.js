@@ -5,7 +5,7 @@ const open = document.querySelector('.gallery__list');
 const modal = document.querySelector('.backdropp');
 const closeBt = document.querySelector('.modal__button_close');
 const backdropp = document.querySelector('.backdropp');
-const modalll = document.querySelector('.modal');
+const modalll = document.querySelector('.modal__render');
 const API_KEY = '0d162b8d206fdcffbed55fe71207ad50';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
@@ -61,18 +61,21 @@ function openModall(e) {
       const comp = com.logo_path;
       //   const id = response.data.id;
 
-      modalll.innerHTML = ListItems({
-        // id,
-        title,
-        vote,
-        img,
-        comp,
-        about,
-        votes,
-        genres,
-        popularity,
-        original,
-      });
+      modalll.insertAdjacentHTML(
+        'beforeend',
+        ListItems({
+          // id,
+          title,
+          vote,
+          img,
+          comp,
+          about,
+          votes,
+          genres,
+          popularity,
+          original,
+        }),
+      );
     })
     .catch(err => {
       console.log(err);
@@ -118,6 +121,7 @@ function openModall(e) {
 }
 
 function closeModall() {
+  modalll.innerHTML = '';
   modal.classList.add('is-hiden');
   closeBt.removeEventListener('click', closeModall);
   document.body.removeEventListener('keydown', closeModallEsc);
