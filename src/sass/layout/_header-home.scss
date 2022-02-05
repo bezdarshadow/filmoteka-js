@@ -67,8 +67,12 @@ header {
 
 .header-logo__link {
   font-family: var(--main-text-font);
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+
   //   font-style: normal;
-  //   font-weight: 500;
+  font-weight: 500;
   font-size: 30px;
   line-height: 35px;
   display: flex;
@@ -94,9 +98,11 @@ header {
 }
 
 .header-nav__link {
+  padding: 5px;
+
   font-family: var(--main-text-font);
   // font-style: normal;
-  // font-weight: 500;
+  font-weight: 500;
   font-size: 12px;
   line-height: 14px;
 
@@ -144,11 +150,6 @@ header {
   margin-top: 40px;
 }
 
-.buttons-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
 .search-form {
   display: flex;
   position: relative;

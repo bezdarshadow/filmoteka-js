@@ -31,7 +31,11 @@
 }
 
 // BUTTONS CONTAINER
-
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
 .buttons-container button {
   width: 135px;
   height: 45px;
@@ -50,7 +54,7 @@
 
   font-family: var(--main-text-font);
   //   font-style: normal;
-  //   font-weight: 500;
+  font-weight: 500;
   font-size: 12px;
   line-height: 16px;
 
@@ -66,13 +70,10 @@
 }
 
 .btn-watched.is-active,
-.btn-queue.is-active{
+.btn-queue.is-active {
   color: var(--btn-text-color);
   background-color: var(--accent-color);
   border: none;
 
   box-shadow: 0px 8px 43px var(--btn-shadow-color);
 }
-
-
-
