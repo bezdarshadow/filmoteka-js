@@ -4,42 +4,41 @@
   box-sizing: border-box;
 }
 
-
 body {
-    min-height: 100vh;
-    scroll-behavior: smooth;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
-  }
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
 
 img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-  
-  a {
-    text-decoration: none;
-    color: var(--main-text-color);
-  }
-  
-  ul[class],
-  ol[class] {
-    list-style: none;
-  }
-  
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-text-color);
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
 input,
 button,
 textarea,
@@ -49,33 +48,29 @@ select {
 
 /* Добавил на всякий случай, вдруг понадобится  */
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    border: 0;
-    clip: rect(0 0 0 0);
-  }
-
-
-.tui-is-selected
-{
-    color: white !important;
-    background-color: var(--accent-color) !important;
-    border-radius: 4px !important;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
-.tui-page-btn
-{
-    border: 0px solid !important;
-    // display: block !important;
-    text-align: center !important;
+
+.tui-is-selected {
+  color: white !important;
+  background-color: var(--accent-color) !important;
+  border-radius: 4px !important;
+}
+.tui-page-btn {
+  border: 0px solid !important;
+  // display: block !important;
+  text-align: center !important;
 }
 .tui-page-btn:hover,
-.tui-page-btn:focus
-{
-    background-color: var(--accent-color) !important;
-    border-radius: 4px !important;
-    color: white !important
+.tui-page-btn:focus {
+  background-color: var(--accent-color) !important;
+  border-radius: 4px !important;
+  color: white !important;
 }

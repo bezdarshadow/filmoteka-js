@@ -66,6 +66,10 @@ header {
 
 .header-logo__link {
   font-family: var(--main-text-font);
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+
   //   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -93,6 +97,8 @@ header {
 }
 
 .header-nav__link {
+  padding: 5px;
+
   font-family: var(--main-text-font);
   // font-style: normal;
   font-weight: 500;
