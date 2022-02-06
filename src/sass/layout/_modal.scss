@@ -167,6 +167,11 @@
       background-color: var(--accent-color);
       border: var(--accent-color);
     }
+    // &:active {
+    //   color: var(--btn-text-color);
+    //   background-color: var(--accent-color);
+    //   border: var(--accent-color);
+    // }
 
     @include mq(tablet) {
       height: 44px;
@@ -255,4 +260,11 @@
     padding-left: 6px;
     padding-right: 6px;
   }
+}
+
+.activ {
+  color: var(--btn-text-color);
+  background-color: var(--accent-color);
+  border: var(--accent-color);
+  transition: background-color 250ms var(--animation);
 }
