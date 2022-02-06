@@ -1,7 +1,6 @@
 'use strict';
 
 import '../sass/main.scss';
-
-import './renderquee';
+import './renderModal';
 import './modal-team';
-import './modal';
+import './localStorage-load';

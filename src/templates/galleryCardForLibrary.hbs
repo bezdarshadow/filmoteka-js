@@ -1,4 +1,4 @@
-{{#each this.results}}
+{{#each this}}
 <li class="gallery__item film-card">
     <img class="film-card__image" src={{#if this.poster_path}}"https://image.tmdb.org/t/p/w500{{this.poster_path}}"{{else}}"https://picsum.photos/200/300
 "{{/if}} alt="{{original_title}}" data-action="{{id}}" >
@@ -11,4 +11,4 @@
         <span class="film-card__rating">{{vote_average}}</span>
      </div>
 </li>
-{{/each}}   
+{{/each}} 
