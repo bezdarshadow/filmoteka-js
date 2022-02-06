@@ -6,13 +6,12 @@
   height: 100%;
   background-color: var(--bckgrmodal);
   z-index: 55;
-  transition: opacity var(--animation), visibility var(--animation);
+  transition: opacity 250ms var(--animation), visibility 250ms var(--animation);
 }
 .is-hiden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  transition: opacity var(--animation), visibility var(--animation);
 }
 
 .modal__button_close {
@@ -159,12 +158,14 @@
     line-height: 16px;
     letter-spacing: 0em;
     text-align: center;
-    color: var(--btn-text-color);
-    background-color: var(--accent-color);
-    border: var(--accent-color);
+    color: var(--main-text-color);
+    background-color: var(--btn-text-color);
+    border-color: var(--main-text-color);
     cursor: pointer;
     &:hover {
-      opacity: 70%;
+      color: var(--btn-text-color);
+      background-color: var(--accent-color);
+      border: var(--accent-color);
     }
 
     @include mq(tablet) {
@@ -193,8 +194,9 @@
     border-color: var(--main-text-color);
     cursor: pointer;
     &:hover {
-      //   opacity: 70%;
-      background-color: rgba(0, 0, 0, 0.15);
+      color: var(--btn-text-color);
+      background-color: var(--accent-color);
+      border: var(--accent-color);
     }
 
     @include mq(tablet) {
@@ -243,6 +245,7 @@
     color: var(--main-text-color);
   }
   &__text_span {
+    margin-left: 4px;
     color: var(--second-text-color);
   }
   &__akcent {
