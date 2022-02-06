@@ -1,4 +1,3 @@
-'use strict';
 import axios from 'axios';
 import ListItems from '../handlebars/modal.hbs';
 const open = document.querySelector('.gallery__list');
@@ -132,6 +131,7 @@ function openModall(e) {
           // console.log(arr);
           localStorage.setItem('id2', arrSec);
           knopkaSecond.classList.add('activ');
+          return;
         } else if (idx == arrSec[i]) {
           knopkaSecond.classList.remove('activ');
           delete arrSec[i];
