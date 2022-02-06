@@ -15,6 +15,7 @@ function losos() {
     // console.log(1);
     return;
   } else {
+    // localStorage.setItem('id', ',');
     let ididid = localStorage.getItem('id');
     arr = ididid.split(',');
   }
@@ -99,18 +100,32 @@ function openModall(e) {
     knopka.addEventListener('click', event => {
       for (let i = 0; i <= arr.length; i += 1) {
         console.log(arr);
-        if (idx !== arr[i]) {
+        // if (idx !== arr[i]) {
+        //   knopka.classList.add('activ');
+        //   // arr.splice(0, 0, idx);
+        //   console.log(arr);
+        //   // localStorage.setItem('id', arr);
+
+        //   return;
+        // } else if (idx == arr[i]) {
+        //   knopka.classList.remove('activ');
+        //   delete arr[i];
+        //   localStorage.setItem('id', arr);
+
+        //   return;
+        // }
+        if (idx == arr[i]) {
+          delete arr[i];
+          // arr.splice(arr[i], 1);
+          localStorage.setItem('id', arr);
+          knopka.classList.remove('activ');
+          // console.log(arr);
+          return;
+        } else if (idx !== arr[i]) {
           knopka.classList.add('activ');
           arr.splice(0, 0, idx);
           //   console.log(arr);
           localStorage.setItem('id', arr);
-
-          return;
-        } else if (idx == arr[i]) {
-          knopka.classList.remove('activ');
-          delete arr[i];
-          localStorage.setItem('id', arr);
-
           return;
         }
       }
@@ -135,7 +150,7 @@ function openModall(e) {
         } else if (idx == arrSec[i]) {
           knopkaSecond.classList.remove('activ');
           delete arrSec[i];
-          localStorage.setItem('id2', arr);
+          localStorage.setItem('id2', arrSec);
 
           return;
         }
@@ -149,6 +164,7 @@ function closeModall() {
   modal.classList.add('is-hiden');
   closeBt.removeEventListener('click', closeModall);
   document.body.removeEventListener('keydown', closeModallEsc);
+  window.location.reload();
 }
 function closeModallEsc(e) {
   if (e.key === 'Escape') {

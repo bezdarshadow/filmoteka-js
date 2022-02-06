@@ -26,15 +26,17 @@ const modalll = document.querySelector('.modal');
 // const API_KEY = '0d162b8d206fdcffbed55fe71207ad50';
 // const BASE_URL = 'https://api.themoviedb.org/3';
 
-let arr = [];
+let arr = [0];
 losos();
 function losos() {
   if (localStorage.getItem('id') == null) {
     // console.log(1);
     return;
   } else {
+    // localStorage.setItem('id', ',');
     let ididid = localStorage.getItem('id');
     arr = ididid.split(',');
+    console.log(arr);
   }
 }
 let arrSec = [];
@@ -44,6 +46,7 @@ function lososSec() {
     // console.log(1);
     return;
   } else {
+    // localStorage.setItem(',');
     let ididid = localStorage.getItem('id2');
     arrSec = ididid.split(',');
   }
@@ -87,11 +90,11 @@ function getMovieById(id) {
 ADD.addEventListener('click', () => {
   libary.innerHTML = '';
   for (const ar of ara) {
-    console.log(ar);
-    console.log('1');
+    // console.log(ar);
+    // console.log('1');
     getMovieById(ar)
       .then(response => {
-        console.log(response.data);
+        // console.log(response.data);
         const title = response.data.title;
         const [genre] = response.data.genres;
         const genres = genre.name;
@@ -177,132 +180,136 @@ QE.addEventListener('click', () => {
 //
 // MODALKA
 //
-let idx = null;
-open.addEventListener('click', openModall);
-function openModall(e) {
-  e.preventDefault();
+// let idx = null;
+// open.addEventListener('click', openModall);
+// function openModall(e) {
+//   e.preventDefault();
 
-  if (e.target.nodeName !== 'IMG' && e.target.nodeName !== 'H3') {
-    return;
-  }
-  modal.classList.remove('is-hiden');
+//   if (e.target.nodeName !== 'IMG' && e.target.nodeName !== 'H3') {
+//     return;
+//   }
+//   modal.classList.remove('is-hiden');
 
-  idx = e.target.dataset.action;
+//   idx = e.target.dataset.action;
 
-  getMovieById(idx)
-    .then(response => {
-      const title = response.data.title;
-      const [genre] = response.data.genres;
-      const genres = genre.name;
-      const popularity = response.data.popularity;
-      const vote = response.data.vote_average;
-      const votes = response.data.vote_count;
-      const original = response.data.original_title;
-      const about = response.data.overview;
-      const img = response.data.poster_path;
-      const [com] = response.data.production_companies;
-      const comp = com.logo_path;
+//   getMovieById(idx)
+//     .then(response => {
+//       const title = response.data.title;
+//       const [genre] = response.data.genres;
+//       const genres = genre.name;
+//       const popularity = response.data.popularity;
+//       const vote = response.data.vote_average;
+//       const votes = response.data.vote_count;
+//       const original = response.data.original_title;
+//       const about = response.data.overview;
+//       const img = response.data.poster_path;
+//       const [com] = response.data.production_companies;
+//       const comp = com.logo_path;
 
-      modalll.insertAdjacentHTML(
-        'beforeend',
-        ListItems({
-          // id,
-          title,
-          vote,
-          img,
-          comp,
-          about,
-          votes,
-          genres,
-          popularity,
-          original,
-        }),
-      );
-    })
-    .catch(err => {
-      console.log(err);
-    });
+//       modalll.insertAdjacentHTML(
+//         'beforeend',
+//         ListItems({
+//           // id,
+//           title,
+//           vote,
+//           img,
+//           comp,
+//           about,
+//           votes,
+//           genres,
+//           popularity,
+//           original,
+//         }),
+//       );
+//     })
+//     .catch(err => {
+//       console.log(err);
+//     });
 
-  closeBt.addEventListener('click', closeModall);
-  document.body.addEventListener('keydown', closeModallEsc);
+// closeBt.addEventListener('click', closeModall);
+// document.body.addEventListener('keydown', closeModallEsc);
 
-  backdropp.addEventListener('click', event => {
-    if (event.target === backdropp) {
-      return closeModall();
-    }
-  });
+// backdropp.addEventListener('click', event => {
+//   if (event.target === backdropp) {
+//     return closeModall();
+//   }
+// });
+// console.log(arr);
+// setTimeout(() => {
+//   const knopka = document.querySelector('.modal__button_watch');
+//   for (let i = 0; i <= arr.length; i += 1) {
+//     if (idx == arr[i]) {
+//       knopka.classList.add('activ');
+//     }
+//   }
+// knopka.addEventListener('click', event => {
+//   for (let i = 0; i <= arr.length; i += 1) {
+//     console.log(arr);
+//     if (idx == arr[i]) {
+//       delete arr[i];
+//       // arr.splice(arr[i], 1);
+//       // localStorage.setItem('id', arr);
+//       knopka.classList.remove('activ');
+//       // console.log(arr);
+//       return;
+//     } else if (idx !== arr[i]) {
+//       knopka.classList.add('activ');
+//       // arr.splice(0, 0, idx);
+//       //   console.log(arr);
+//       // localStorage.setItem('id', arr);
+//       return;
+//     }
+//     // return;
+//   }
+// });
+// }, 50);
+// setTimeout(() => {
+//   const knopkaSecond = document.querySelector('.modal__button_queue');
+//   for (let i = 0; i <= arrSec.length; i += 1) {
+//     if (idx == arrSec[i]) {
+//       knopkaSecond.classList.add('activ');
+//     }
+//   }
+//     knopkaSecond.addEventListener('click', event => {
+//       for (let i = 0; i <= arrSec.length; i += 1) {
+//         //   console.log(arr);
+//         if (idx !== arrSec[i]) {
+//           arrSec.splice(0, 0, idx);
+//           // console.log(arr);
+//           localStorage.setItem('id2', arrSec);
+//           knopkaSecond.classList.add('activ');
+//           return;
+//         } else if (idx == arrSec[i]) {
+//           knopkaSecond.classList.remove('activ');
+//           delete arrSec[i];
+//           localStorage.setItem('id2', arrSec);
 
-  setTimeout(() => {
-    const knopka = document.querySelector('.modal__button_watch');
-    for (let i = 0; i <= arr.length; i += 1) {
-      if (idx == arr[i]) {
-        knopka.classList.add('activ');
-      }
-    }
-    knopka.addEventListener('click', event => {
-      for (let i = 0; i <= arr.length; i += 1) {
-        console.log(arr);
-        if (idx !== arr[i]) {
-          knopka.classList.add('activ');
-          arr.splice(0, 0, idx);
-          //   console.log(arr);
-          localStorage.setItem('id', arr);
+//           return;
+//         }
+//       }
+//     });
+//   }, 50);
+// }
 
-          return;
-        } else if (idx == arr[i]) {
-          knopka.classList.remove('activ');
-          delete arr[i];
-          localStorage.setItem('id', arr);
+// function closeModall() {
+//   modal.classList.add('is-hiden');
+//   closeBt.removeEventListener('click', closeModall);
+//   document.body.removeEventListener('keydown', closeModallEsc);
+//   // location.reload();
+//   modalll.innerHTML = '';
+//   window.location.reload();
+// }
+// function closeModallEsc(e) {
+//   if (e.key === 'Escape') {
+//     return closeModall();
+//   }
+// }
+// function getMovieById(id) {
+//   const data = axios.get(`${ID_URL}${id}?api_key=${API_KEY}`);
+//   data.then(resp => {});
 
-          return;
-        }
-      }
-    });
-  }, 50);
-  setTimeout(() => {
-    const knopkaSecond = document.querySelector('.modal__button_queue');
-    for (let i = 0; i <= arrSec.length; i += 1) {
-      if (idx == arrSec[i]) {
-        knopkaSecond.classList.add('activ');
-      }
-    }
-    knopkaSecond.addEventListener('click', event => {
-      for (let i = 0; i <= arrSec.length; i += 1) {
-        //   console.log(arr);
-        if (idx !== arrSec[i]) {
-          arrSec.splice(0, 0, idx);
-          // console.log(arr);
-          localStorage.setItem('id2', arrSec);
-          knopkaSecond.classList.add('activ');
-          return;
-        } else if (idx == arrSec[i]) {
-          knopkaSecond.classList.remove('activ');
-          delete arrSec[i];
-          localStorage.setItem('id2', arr);
-
-          return;
-        }
-      }
-    });
-  }, 50);
-}
-
-function closeModall() {
-  modal.classList.add('is-hiden');
-  closeBt.removeEventListener('click', closeModall);
-  document.body.removeEventListener('keydown', closeModallEsc);
-}
-function closeModallEsc(e) {
-  if (e.key === 'Escape') {
-    return closeModall();
-  }
-}
-function getMovieById(id) {
-  const data = axios.get(`${ID_URL}${id}?api_key=${API_KEY}`);
-  data.then(resp => {});
-
-  return data;
-}
+//   return data;
+// }
 
 //
 //
@@ -316,18 +323,18 @@ document.addEventListener('DOMContentLoaded', function (e) {
   }, 0); // 5000 msec = 5 sec
 });
 
-// ADD.addEventListener('click', tajikistan);
-// QE.addEventListener('click', uzbekistan);
+ADD.addEventListener('click', tajikistan);
+QE.addEventListener('click', uzbekistan);
 
-// function uzbekistan() {
-//   ADD.classList.remove('is-active');
-//   QE.classList.add('is-active');
-// }
+function uzbekistan() {
+  ADD.classList.remove('is-active');
+  QE.classList.add('is-active');
+}
 
-// function tajikistan() {
-//   QE.classList.remove('is-active');
-//   ADD.classList.add('is-active');
-// }
+function tajikistan() {
+  QE.classList.remove('is-active');
+  ADD.classList.add('is-active');
+}
 
 //
 //
