@@ -62,4 +62,15 @@ export class TheMoviedbAPI {
     }
 
 
+    async fetchIdMovies(idMovie){
+        const idMovies = await axios.get(`${this.#BASE_URL}movie/${idMovie}`, {
+            params:{
+                api_key: this.#API_KEY,
+            }
+        })
+
+        return idMovies;
+    } 
+
+
 }
