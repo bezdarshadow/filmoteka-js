@@ -6,7 +6,7 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 const ID_URL = `${BASE_URL}/movie/`;
 const ADD = document.querySelector('.btn-watched');
 const QE = document.querySelector('.btn-queue');
-const reset = document.querySelector('.btn-reset');
+// const reset = document.querySelector('.btn-reset');
 import { LoadSpinner } from './loading-spinner';
 
 const spinner = new LoadSpinner({
@@ -171,16 +171,12 @@ QE.addEventListener('click', () => {
   }
 });
 
-// reset.addEventListener('click', () => {
-//   localStorage.clear();
-//   location.reload();
-// });
 //
 //
 //
 //
 // MODALKA
-// const ID_URL = `${BASE_URL}/movie/`;
+//
 let idx = null;
 open.addEventListener('click', openModall);
 function openModall(e) {
@@ -207,17 +203,21 @@ function openModall(e) {
       const [com] = response.data.production_companies;
       const comp = com.logo_path;
 
-      modalll.innerHTML = ListItems({
-        title,
-        vote,
-        img,
-        comp,
-        about,
-        votes,
-        genres,
-        popularity,
-        original,
-      });
+      modalll.insertAdjacentHTML(
+        'beforeend',
+        ListItems({
+          // id,
+          title,
+          vote,
+          img,
+          comp,
+          about,
+          votes,
+          genres,
+          popularity,
+          original,
+        }),
+      );
     })
     .catch(err => {
       console.log(err);
@@ -234,20 +234,38 @@ function openModall(e) {
 
   setTimeout(() => {
     const knopka = document.querySelector('.modal__button_watch');
+    for (let i = 0; i <= arr.length; i += 1) {
+      if (idx == arr[i]) {
+        knopka.classList.add('activ');
+      }
+    }
     knopka.addEventListener('click', event => {
       for (let i = 0; i <= arr.length; i += 1) {
-        // console.log(arr);
+        console.log(arr);
         if (idx !== arr[i]) {
+          knopka.classList.add('activ');
           arr.splice(0, 0, idx);
           //   console.log(arr);
           localStorage.setItem('id', arr);
+
+          return;
+        } else if (idx == arr[i]) {
+          knopka.classList.remove('activ');
+          delete arr[i];
+          localStorage.setItem('id', arr);
+
+          return;
         }
-        return;
       }
     });
-  }, 700);
+  }, 50);
   setTimeout(() => {
     const knopkaSecond = document.querySelector('.modal__button_queue');
+    for (let i = 0; i <= arrSec.length; i += 1) {
+      if (idx == arrSec[i]) {
+        knopkaSecond.classList.add('activ');
+      }
+    }
     knopkaSecond.addEventListener('click', event => {
       for (let i = 0; i <= arrSec.length; i += 1) {
         //   console.log(arr);
@@ -255,11 +273,18 @@ function openModall(e) {
           arrSec.splice(0, 0, idx);
           // console.log(arr);
           localStorage.setItem('id2', arrSec);
+          knopkaSecond.classList.add('activ');
+          return;
+        } else if (idx == arrSec[i]) {
+          knopkaSecond.classList.remove('activ');
+          delete arrSec[i];
+          localStorage.setItem('id2', arr);
+
+          return;
         }
-        return;
       }
     });
-  }, 700);
+  }, 50);
 }
 
 function closeModall() {
@@ -291,18 +316,18 @@ document.addEventListener('DOMContentLoaded', function (e) {
   }, 0); // 5000 msec = 5 sec
 });
 
-ADD.addEventListener('click', tajikistan);
-QE.addEventListener('click', uzbekistan);
+// ADD.addEventListener('click', tajikistan);
+// QE.addEventListener('click', uzbekistan);
 
-function uzbekistan() {
-  ADD.classList.remove('is-active');
-  QE.classList.add('is-active');
-}
+// function uzbekistan() {
+//   ADD.classList.remove('is-active');
+//   QE.classList.add('is-active');
+// }
 
-function tajikistan() {
-  QE.classList.remove('is-active');
-  ADD.classList.add('is-active');
-}
+// function tajikistan() {
+//   QE.classList.remove('is-active');
+//   ADD.classList.add('is-active');
+// }
 
 //
 //

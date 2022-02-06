@@ -1,4 +1,3 @@
-'use strict';
 import axios from 'axios';
 import ListItems from '../handlebars/modal.hbs';
 const open = document.querySelector('.gallery__list');
@@ -92,20 +91,38 @@ function openModall(e) {
 
   setTimeout(() => {
     const knopka = document.querySelector('.modal__button_watch');
+    for (let i = 0; i <= arr.length; i += 1) {
+      if (idx == arr[i]) {
+        knopka.classList.add('activ');
+      }
+    }
     knopka.addEventListener('click', event => {
       for (let i = 0; i <= arr.length; i += 1) {
-        // console.log(arr);
+        console.log(arr);
         if (idx !== arr[i]) {
+          knopka.classList.add('activ');
           arr.splice(0, 0, idx);
           //   console.log(arr);
           localStorage.setItem('id', arr);
+
+          return;
+        } else if (idx == arr[i]) {
+          knopka.classList.remove('activ');
+          delete arr[i];
+          localStorage.setItem('id', arr);
+
+          return;
         }
-        return;
       }
     });
-  }, 700);
+  }, 50);
   setTimeout(() => {
     const knopkaSecond = document.querySelector('.modal__button_queue');
+    for (let i = 0; i <= arrSec.length; i += 1) {
+      if (idx == arrSec[i]) {
+        knopkaSecond.classList.add('activ');
+      }
+    }
     knopkaSecond.addEventListener('click', event => {
       for (let i = 0; i <= arrSec.length; i += 1) {
         //   console.log(arr);
@@ -113,11 +130,18 @@ function openModall(e) {
           arrSec.splice(0, 0, idx);
           // console.log(arr);
           localStorage.setItem('id2', arrSec);
+          knopkaSecond.classList.add('activ');
+          return;
+        } else if (idx == arrSec[i]) {
+          knopkaSecond.classList.remove('activ');
+          delete arrSec[i];
+          localStorage.setItem('id2', arr);
+
+          return;
         }
-        return;
       }
     });
-  }, 700);
+  }, 50);
 }
 
 function closeModall() {
