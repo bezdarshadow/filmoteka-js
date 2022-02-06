@@ -3,35 +3,39 @@
 .header-my-library {
   background-color: rgb(43, 32, 32);
   background-image: linear-gradient(to right, var(--bckgrheader), var(--bckgrheader)),
-    url('../images/header-bg/rectangle1(lib).jpg');
+    url('../images/header-bg/rectangle1_lib.jpg');
 
   @include mq(retina) {
     background-image: linear-gradient(to right, var(--bckgrheader), var(--bckgrheader)),
-      url('../images/header-bg/rectangle2x(lib).jpg');
+      url('../images/header-bg/rectangle2x_lib.jpg');
   }
 
   @include mq(mobile-only) {
     background-image: linear-gradient(to right, var(--bckgrheader), var(--bckgrheader)),
-      url('../images/header-bg/rectangle1(lib)_320.jpg');
+      url('../images/header-bg/rectangle1_lib_320.jpg');
 
     @include mq(retina) {
       background-image: linear-gradient(to right, var(--bckgrheader), var(--bckgrheader)),
-        url('../images/header-bg/rectangle2x(lib)_320.jpg');
+        url('../images/header-bg/rectangle2x_lib_320.jpg');
     }
   }
   @include mq(tablet-only) {
     background-image: linear-gradient(to right, var(--bckgrheader), var(--bckgrheader)),
-      url('../images/header-bg/rectangle1(lib)_768.jpg');
+      url('../images/header-bg/rectangle1_lib_768.jpg');
 
     @include mq(retina) {
       background-image: linear-gradient(to right, var(--bckgrheader), var(--bckgrheader)),
-        url('../images/header-bg/rectangle2x(lib)_768.jpg');
+        url('../images/header-bg/rectangle2x_lib_768.jpg');
     }
   }
 }
 
 // BUTTONS CONTAINER
-
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
 .buttons-container button {
   width: 135px;
   height: 45px;
@@ -50,7 +54,7 @@
 
   font-family: var(--main-text-font);
   //   font-style: normal;
-  //   font-weight: 500;
+  font-weight: 500;
   font-size: 12px;
   line-height: 16px;
 
@@ -66,13 +70,10 @@
 }
 
 .btn-watched.is-active,
-.btn-queue.is-active{
+.btn-queue.is-active {
   color: var(--btn-text-color);
   background-color: var(--accent-color);
   border: none;
 
   box-shadow: 0px 8px 43px var(--btn-shadow-color);
 }
-
-
-
