@@ -5,11 +5,15 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   overflow-y: scroll;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+
 }
 
 img {

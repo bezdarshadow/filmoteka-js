@@ -9,6 +9,8 @@
     }
 
     &__list{
+        margin-bottom: 40px;
+
         @include mq(tablet){
             display: flex;
             flex-wrap: wrap;
@@ -32,8 +34,14 @@
         max-width: 280px;
         flex-basis: calc((100% - 90px) / 3);
         }
+        border-radius: 5px;
+
+        transition: box-shadow 250ms var(--animation);
         
-    
+        &:hover,
+        &:focus{
+            box-shadow:  0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);;
+        }
     
     }
     
@@ -49,6 +57,8 @@
 
     &__image{
         border-radius: 5px;
+        height: 400px;
+        object-fit: cover;
     
     }
 
