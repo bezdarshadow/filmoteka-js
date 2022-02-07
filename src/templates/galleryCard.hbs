@@ -1,6 +1,7 @@
 {{#each this.results}}
 <li class="gallery__item film-card">
-    <img class="film-card__image" src={{#if this.poster_path}}"https://image.tmdb.org/t/p/w500{{this.poster_path}}"{{else}}"https://picsum.photos/200/300
+    <a href="">
+        <img class="film-card__image" src={{#if this.poster_path}}"https://image.tmdb.org/t/p/w500{{this.poster_path}}"{{else}}"https://picsum.photos/200/300
 "{{/if}} alt="{{original_title}}" data-action="{{id}}" >
     <div class="film-card__bottom">
         <div class="film-card__information">
@@ -10,5 +11,6 @@
         </div>
         <span class="film-card__rating">{{vote_average}}</span>
      </div>
+    </a>   
 </li>
 {{/each}}   

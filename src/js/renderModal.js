@@ -16,6 +16,7 @@ const closeBtnEl = document.querySelector('.modal__button_close');
 
 
 galleryEl.addEventListener('click', el => {
+  el.preventDefault();
     if (el.target.nodeName === 'IMG') {
       const filmId = el.target.dataset.action;
       openModal(filmId);
