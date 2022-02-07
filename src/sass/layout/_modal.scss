@@ -17,8 +17,8 @@
 .modal__button_close {
   position: absolute;
   left: 240%;
-  top: -1180%;
-  background-color: var(--btn-text-color);
+  top: -700%;
+  background-color: inherit;
   border: 0px;
   z-index: 50000;
   cursor: pointer;
@@ -39,6 +39,7 @@
   max-width: 40px;
   max-height: 40px;
   &__wrapper {
+    // position: relative;
     left: 23%;
     max-width: 40px;
     max-height: 40px;
@@ -46,7 +47,6 @@
   &__render {
     z-index: 500;
     min-width: 280px;
-    min-height: 958px;
     background: var(--btn-text-color);
     transform: translate(-50%, -50%);
     border-radius: 4px;
@@ -55,6 +55,9 @@
     padding-left: 20px;
     padding-bottom: 41px;
     overflow: auto;
+    @include mq(mobile-only){
+      height: 100vh;
+    }
     @include mq(tablet) {
       display: flex;
 
