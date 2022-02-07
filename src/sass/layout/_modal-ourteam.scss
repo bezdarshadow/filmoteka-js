@@ -1,13 +1,13 @@
 .modal-ourteam {
     width: 100vw;
     height: 100vh;
+    overflow-y: auto;
     @include mq(tablet) {
         height: 85vh;
         width: 80vw;
         max-height:900px ;
     }
     @include mq(desktop) {
-        overflow: hidden;
         max-height: 750px;
         width: 700px;
     }
@@ -20,7 +20,6 @@
     border-radius: 4px;
     position: relative; 
     padding: 20px;
-    overflow-y: auto;
   }
   .modal-ourteam__list_of_employers
   {
