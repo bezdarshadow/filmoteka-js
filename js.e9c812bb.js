@@ -96,4 +96,4 @@ const e=document.querySelector(".footer__btn"),t=document.querySelector(".backdr
 },{}],"QvaY":[function(require,module,exports) {
 "use strict";require("../sass/main.scss"),require("./renderModal"),require("./renderMovies"),require("./loading-spinner"),require("./modal-team"),require("./pagination"),require("./themoviedb-api");
 },{"../sass/main.scss":"clu1","./renderModal":"TqZv","./renderMovies":"P608","./loading-spinner":"av7d","./modal-team":"O9Th","./pagination":"o8lo","./themoviedb-api":"sIng"}]},{},["QvaY"], null)
-//# sourceMappingURL=/filmoteka-js/js.eb3ec13d.js.map
+//# sourceMappingURL=/filmoteka-js/js.e9c812bb.js.map
